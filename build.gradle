@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'io.depaudit'
+version = '0.1.0'
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+repositories { mavenCentral() }
+
+dependencies {
+    implementation 'org.bouncycastle:bcpg-jdk18on:1.81'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.81'
+    implementation 'org.bouncycastle:bcutil-jdk18on:1.81'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+application {
+    mainClass = 'io.depaudit.Main'
+    applicationName = 'depaudit'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-Xlint:all' << '-Werror'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging { events 'failed' }
+}
+
+jar {
+    manifest { attributes 'Main-Class': 'io.depaudit.Main' }
+}
