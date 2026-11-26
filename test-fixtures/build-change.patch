@@ -1,0 +1,15 @@
+diff --git a/build.gradle.kts b/build.gradle.kts
+index 1111111..2222222 100644
+--- a/build.gradle.kts
++++ b/build.gradle.kts
+@@ -18,9 +18,9 @@ repositories {
+ }
+
+ dependencies {
+-    implementation("com.internal:billing-client:2.9.0")
+-    implementation("com.acme:widget-lib:1.4.0")
++    implementation("com.internal:billing-client:3.0.0")
++    implementation("com.acme:widget-lib:1.5.0")
+     implementation("com.acme:auth-core:2.1.0")
+     testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+ }

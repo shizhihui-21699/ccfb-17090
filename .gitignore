@@ -16,3 +16,14 @@ node_modules/
 __pycache__/
 .venv/
 venv/
+
+# Java/Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+.idea/
+*.iml
+.vscode/
